@@ -1,10 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Content = styled.div`
-  width: 75vw;
+const Content = styled.div<{ isSidebarActive: boolean }>`
+  width: ${({ isSidebarActive }) =>
+    isSidebarActive ? '75vw' : 'calc(100vw - 51px)'};
+  transition: width 0.5s ease-in-out;
   height: 100vh;
   padding: 50px;
-  margin-left: 25vw;
+  overflow-y: scroll;
 `;
 
 const Style = { Content };

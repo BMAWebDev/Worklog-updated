@@ -35,6 +35,7 @@
       "@hooks/*": ["./hooks/*"],
       "@views/*": ["./views/*"],
       "@lib/*": ["./lib/*"],
+      "@redux/*": ["./redux/*"],
     }
   },
   "include": ["src"]

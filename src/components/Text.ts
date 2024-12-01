@@ -13,28 +13,32 @@ export const Text = styled.p<TextProps>`
   text-align: ${({ align }) => align};
   width: ${({ isFullWidth }) => isFullWidth && "100%"};
   align-self: ${({ alignSelf }) => alignSelf || "auto"};
+  font-weight: ${({ weight }) => weight};
 `;
 
 export const Heading1 = styled.h1<TextProps>`
   font-family: ${({ family }) => family || config.text.family};
-  color: ${Colors.Black};
+  color: ${({ color }) => color || Colors.Black};
   font-size: ${config.text.heading1.size}px;
   text-align: ${({ align }) => align};
   width: ${({ isFullWidth }) => isFullWidth && "100%"};
+  font-weight: ${({ weight }) => weight};
 `;
 
 export const Heading2 = styled.h2<TextProps>`
   font-family: ${({ family }) => family || config.text.family};
-  color: ${Colors.Black};
+  color: ${({ color }) => color || Colors.Black};
   font-size: ${({ size }) => (size ? `${size}px` : `${config.text.heading2.size}px`)};
   text-align: ${({ align }) => align};
   width: ${({ isFullWidth }) => isFullWidth && "100%"};
+  font-weight: ${({ weight }) => weight};
 `;
 
 export const Heading3 = styled.h3<TextProps>`
   font-family: ${({ family }) => family || config.text.family};
-  color: ${Colors.Black};
+  color: ${({ color }) => color || Colors.Black};
   font-size: ${config.text.heading3.size}px;
   text-align: ${({ align }) => align};
   width: ${({ isFullWidth }) => isFullWidth && "100%"};
+  font-weight: ${({ weight }) => weight};
 `;

@@ -3,6 +3,7 @@ enum Routes {
   Clients = "/clients",
   Login = "/login",
   Register = "/register",
+  Settings = "/settings",
 }
 
 export default Routes;
