@@ -4,26 +4,27 @@ import { Colors } from '@constants/config';
 // components
 import Flex from '@components/Flex';
 
-const Project = styled(Flex)`
+const Client = styled(Flex)`
   border: 1px solid ${Colors.LightGrey};
   border-radius: 15px;
   box-shadow: 0px 1px 9px 1px #b1acac;
-  // width: calc(33.33% - 17.5px); // 3 cards on a row
-  width: calc(50% - 12.5px); // 2 cards on a row
   flex: auto;
 `;
 
 const Thumbnail = styled.div`
-  width: 100%;
+  width: 35%;
   min-height: 20vh;
+  height: 100%;
   background: ${Colors.DarkGrey};
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px 0 0 15px;
 `;
 
 const TextContainer = styled(Flex)`
   padding: 10px;
 `;
 
-const Style = { Project, Thumbnail, TextContainer };
+const ButtonsContainer = styled(Flex)``;
+
+const Style = { Client, Thumbnail, TextContainer, ButtonsContainer };
 
 export default Style;

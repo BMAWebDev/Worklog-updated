@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 // constants
-import config, { Colors } from "@constants/config";
+import config, { Colors } from '@constants/config';
 // models
-import { ButtonProps } from "@models/button";
+import { ButtonProps } from '@models/button';
 
 export const PrimaryButton = styled.button<ButtonProps>`
   background: ${Colors.Blue};
@@ -13,4 +13,9 @@ export const PrimaryButton = styled.button<ButtonProps>`
   width: 100%;
   cursor: pointer;
   font-size: ${config.button.size}px;
+  flex: ${({ flex }) => flex};
+`;
+
+export const RemoveButton = styled(PrimaryButton)<ButtonProps>`
+  background: ${Colors.Red};
 `;
