@@ -10,13 +10,16 @@ import { PrimaryButton } from '@components/Button';
 import Style from './styled';
 import Routes from '@constants/routes';
 import { Colors } from '@constants/config';
+import { useState } from 'react';
 
-const Login = () => {
+const ResetPassword = () => {
+  const [isSent, setIsSent] = useState(false);
+
   return (
-    <Style.Login align="center" justify="center" alignContent="center">
+    <Style.ResetPassword align="center" justify="center" alignContent="center">
       <Style.Container gap={50}>
         <Heading1 isFullWidth align="center">
-          Login to worklog
+          Reset password
         </Heading1>
 
         <Form
@@ -24,6 +27,7 @@ const Login = () => {
           validationSchema={validationSchema}
           onSubmit={(values) => {
             console.log(values);
+            !isSent && setIsSent(true);
           }}
         >
           <Field
@@ -33,17 +37,10 @@ const Login = () => {
             type="email"
           />
 
-          <Field
-            label="Password:"
-            name="password"
-            placeholder="Enter your password"
-            type="password"
-          />
-
           <Text>
-            Don't have an account? Register {` `}
+            Want to login? Click {` `}
             <Link
-              to={Routes.Register}
+              to={Routes.Login}
               style={{ color: Colors.Blue, textDecoration: 'underline' }}
             >
               here
@@ -51,24 +48,21 @@ const Login = () => {
             .
           </Text>
 
-          <Text>
-            Forgot your password? Click {` `}
-            <Link
-              to={Routes.ResetPassword}
-              style={{ color: Colors.Blue, textDecoration: 'underline' }}
-            >
-              here
-            </Link>
-            .
-          </Text>
+          {isSent && (
+            <Text>
+              A message has been sent to the entered email address. If there is
+              an account linked to the address, you will receive a reset
+              password link.
+            </Text>
+          )}
 
-          <PrimaryButton type="submit" radius="8px">
-            Login
+          <PrimaryButton type="submit" radius="8px" disabled={isSent}>
+            Reset password
           </PrimaryButton>
         </Form>
       </Style.Container>
-    </Style.Login>
+    </Style.ResetPassword>
   );
 };
 
-export default Login;
+export default ResetPassword;

@@ -13,6 +13,7 @@ import Clients from '@views/Clients';
 import Settings from '@views/Settings';
 import Register from '@views/Register';
 import Login from '@views/Login';
+import ResetPassword from '@views/ResetPassword';
 // style
 import './style/globals.css';
 
@@ -52,6 +53,8 @@ createRoot(document.getElementById('root')!).render(
           <Route path={Routes.Register} element={<Register />} />
 
           <Route path={Routes.Login} element={<Login />} />
+
+          <Route path={Routes.ResetPassword} element={<ResetPassword />} />
         </RouterRoutes>
       </BrowserRouter>
     </PersistGate>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 // components
 import Flex from '@components/Flex';
 
-const Login = styled(Flex)`
+const ResetPassword = styled(Flex)`
   width: 100vw;
   height: 100vh;
 `;
@@ -12,6 +12,6 @@ const Container = styled(Flex)`
   width: 100%;
 `;
 
-const Style = { Login, Container };
+const Style = { ResetPassword, Container };
 
 export default Style;
