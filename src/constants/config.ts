@@ -11,7 +11,7 @@ const config = {
   text: {
     family: 'Inter',
     heading1: {
-      size: 24,
+      size: 40,
     },
     heading2: {
       size: 22,

@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes as RouterRoutes } from 'react-router';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 // constants
 import Routes from '@constants/routes';
 // redux
@@ -10,9 +11,9 @@ import Layout from '@components/Layout';
 import Projects from '@views/Projects';
 import Clients from '@views/Clients';
 import Settings from '@views/Settings';
+import Register from '@views/Register/index';
 // style
 import './style/globals.css';
-import { PersistGate } from 'redux-persist/integration/react';
 
 createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
@@ -30,7 +31,6 @@ createRoot(document.getElementById('root')!).render(
           />
 
           <Route
-            index
             path={Routes.Clients}
             element={
               <Layout>
@@ -40,7 +40,6 @@ createRoot(document.getElementById('root')!).render(
           />
 
           <Route
-            index
             path={Routes.Settings}
             element={
               <Layout>
@@ -48,6 +47,8 @@ createRoot(document.getElementById('root')!).render(
               </Layout>
             }
           />
+
+          <Route path={Routes.Register} element={<Register />} />
         </RouterRoutes>
       </BrowserRouter>
     </PersistGate>
