@@ -11,7 +11,8 @@ import Layout from '@components/Layout';
 import Projects from '@views/Projects';
 import Clients from '@views/Clients';
 import Settings from '@views/Settings';
-import Register from '@views/Register/index';
+import Register from '@views/Register';
+import Login from '@views/Login';
 // style
 import './style/globals.css';
 
@@ -49,6 +50,8 @@ createRoot(document.getElementById('root')!).render(
           />
 
           <Route path={Routes.Register} element={<Register />} />
+
+          <Route path={Routes.Login} element={<Login />} />
         </RouterRoutes>
       </BrowserRouter>
     </PersistGate>

@@ -1,7 +1,7 @@
 // constants
 import { initialValues, validationSchema } from './validation';
 // components
-import { Heading1 } from '@components/Text';
+import { Heading1, Text } from '@components/Text';
 import Form from '@components/Form';
 import Field from '@components/Field';
 import { PrimaryButton } from '@components/Button';
@@ -9,6 +9,9 @@ import Flex from '@components/Flex';
 import Checkbox from '@components/Checkbox';
 // style
 import Style from './styled';
+import { Link } from 'react-router';
+import Routes from '@constants/routes';
+import { Colors } from '@constants/config';
 
 const Register = () => {
   return (
@@ -71,6 +74,17 @@ const Register = () => {
                 placeholder="Confirm your password"
                 type="password"
               />
+
+              <Text>
+                Already have an account? Login {` `}
+                <Link
+                  to={Routes.Login}
+                  style={{ color: Colors.Blue, textDecoration: 'underline' }}
+                >
+                  here
+                </Link>
+                .
+              </Text>
 
               <PrimaryButton type="submit" radius="8px">
                 Register
