@@ -3,7 +3,7 @@ import { Form as FormikForm } from 'formik';
 // constants
 import { Colors } from '@constants/config';
 
-const Form = styled(FormikForm)`
+const Form = styled(FormikForm)<{ style?: React.CSSProperties }>`
   border: 1px solid ${Colors.LightGrey};
   border-radius: 15px;
   padding: 25px;
@@ -12,6 +12,8 @@ const Form = styled(FormikForm)`
   flex-direction: column;
   width: 100%;
   gap: 25px;
+
+  ${({ style }) => ({ ...style })};
 `;
 
 const Style = { Form };

@@ -21,7 +21,7 @@ const Field: React.FC<FieldProps> = ({
   type = 'text',
 }) => {
   return (
-    <Flex direction="column" isFullWidth flex={1}>
+    <Flex direction="column" isFullWidth flex={1} gap={5}>
       <Label htmlFor={name}>{label}</Label>
 
       <Style.Field name={name} type={type} placeholder={placeholder} />

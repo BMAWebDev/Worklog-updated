@@ -10,6 +10,7 @@ interface FormProps<T = Dictionary<any>> {
   validationSchema?: AnyObjectSchema;
   onSubmit: (values: T) => void;
   children?: ReactNode | ((formikProps: FormikProps<T>) => ReactNode); // Allow render prop
+  style?: React.CSSProperties;
 }
 
 const Form: React.FC<FormProps> = ({
@@ -17,6 +18,7 @@ const Form: React.FC<FormProps> = ({
   validationSchema,
   onSubmit,
   children,
+  style,
 }) => {
   return (
     <Formik
@@ -26,9 +28,9 @@ const Form: React.FC<FormProps> = ({
     >
       {(formikProps) =>
         typeof children === 'function' ? (
-          <Style.Form>{children(formikProps)}</Style.Form>
+          <Style.Form style={style}>{children(formikProps)}</Style.Form>
         ) : (
-          <Style.Form>{children}</Style.Form> // Default JSX
+          <Style.Form style={style}>{children}</Style.Form> // Default JSX
         )
       }
     </Formik>

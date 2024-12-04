@@ -5,13 +5,14 @@ import config, { Colors } from '@constants/config';
 import { ButtonProps } from '@models/button';
 
 export const PrimaryButton = styled.button<ButtonProps>`
-  background: ${Colors.Blue};
+  background: ${({ disabled }) =>
+    disabled ? Colors.DisabledBlue : Colors.Blue};
   color: ${Colors.White};
   border-radius: ${({ radius }) => radius || `${config.button.radius}px`};
   border: 0;
   padding: ${({ padding }) => padding || config.button.padding};
   width: 100%;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   font-size: ${config.button.size}px;
   flex: ${({ flex }) => flex};
 `;
