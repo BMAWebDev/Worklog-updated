@@ -1,4 +1,4 @@
-type FlexAlignment = 'flex-start' | 'flex-end' | 'center';
+type FlexAlignment = 'flex-start' | 'flex-end' | 'center' | 'stretch';
 
 export interface FlexProps {
   justify?: 'space-between' | 'space-evenly' | FlexAlignment;

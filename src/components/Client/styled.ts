@@ -13,8 +13,6 @@ const Client = styled(Flex)`
 
 const Thumbnail = styled.div`
   width: 35%;
-  min-height: 20vh;
-  height: 100%;
   background: ${Colors.DarkGrey};
   border-radius: 15px 0 0 15px;
 `;

@@ -14,7 +14,7 @@ interface ClientProps {
 
 const Client: React.FC<ClientProps> = ({ title, roles }) => {
   return (
-    <Style.Client isFullWidth>
+    <Style.Client align="stretch" isFullWidth>
       <Style.Thumbnail />
 
       <Style.TextContainer
